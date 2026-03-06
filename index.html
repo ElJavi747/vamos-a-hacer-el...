@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una pregunta importante</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#2b1055,#7597de);
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.card{
+  background:#111;
+  padding:35px 25px;
+  border-radius:22px;
+  text-align:center;
+  width:90%;
+  max-width:400px;
+  box-shadow:0 20px 45px rgba(0,0,0,.4);
+}
+
+h1{
+  color:#ffcc70;
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.buttons{
+  position:relative;
+  height:120px;
+}
+
+button{
+  padding:14px 24px;
+  font-size:16px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+#yes{
+  background:#ff4081;
+  color:white;
+  box-shadow:0 0 15px rgba(255,64,129,.6);
+}
+
+#no{
+  background:#555;
+  color:white;
+  position:absolute;
+  right:0;
+}
+
+#msg{
+  margin-top:25px;
+  font-size:18px;
+  font-weight:bold;
+  color:#ff4081;
+  display:none;
+  animation:latido 1s infinite;
+}
+
+@keyframes latido{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.1)}
+  100%{transform:scale(1)}
+}
+</style>
+<style type="text/css">
+.grande { font-size: 60px; }
+</style>
+<script>
+// Escribir aqui el código Javascript
+</script>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>¿Quieres ir a comer 🍔<br>o vamos a hacer el amor primero? 😈</h1>
+
+  <div class="buttons">
+    <button id="yes">Hacer el amor 🔥</button>
+    <button id="no">Ir a comer 😇</button>
+  </div>
+
+  <div id="msg" style="display: block;">Lo sabía… pervertida, Warrota💜😈</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  const noBtn=document.getElementById("no");
+  const yesBtn=document.getElementById("yes");
+  const msg=document.getElementById("msg");
+
+  msg.style.display="none";
+
+  function mover(){
+    const x=Math.random()*160-80;
+    const y=Math.random()*80-40;
+    noBtn.style.transform=`translate(${x}px,${y}px)`;
+  }
+
+  noBtn.addEventListener("mouseenter",mover);
+  noBtn.addEventListener("touchstart",function(e){
+    e.preventDefault(); mover();
+  });
+
+  yesBtn.addEventListener("click",function(){
+    msg.style.display="block";
+  });
+});
+</script>
+
+
+
+
+</body></html>
